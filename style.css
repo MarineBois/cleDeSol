@@ -14,7 +14,7 @@ canvas {
     margin-bottom: 20px;
 }
 
-#boutons-reponses {
+.boutons-reponses {
     display: flex;
     justify-content: center;
     gap: 10px;
