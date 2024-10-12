@@ -121,7 +121,7 @@ $(document).ready(function () {
             const positionY = 200;
             ctx.font = '14px Arial';
             ctx.fillStyle = '#000'; // Utilise la couleur noire
-            ctx.fillText(noteCliquee, 80 + (indexNoteCourante * 60) - 10, positionY - 15); // Positionne le texte au-dessus de la note (descendu un peu)
+            ctx.fillText(noteCliquee, 50 + (indexNoteCourante * 60) - 10, positionY - 15); // Positionne le texte au-dessus de la note (descendu un peu)
             indexNoteCourante++;  // Passer à la note suivante
 
             // Vérifie si toutes les notes ont été devinées
@@ -142,7 +142,7 @@ $(document).ready(function () {
             const positionY = 200;
             ctx.font = '14px Arial';
             ctx.fillStyle = '#000'; // Utilise la couleur noire
-            ctx.fillText(notesADeviner[indexNoteCourante], 100 + (indexNoteCourante * 80) - 10, positionY - 15); // Positionne le texte au-dessus de la note (descendu un peu)
+            ctx.fillText(notesADeviner[indexNoteCourante], 60 + (indexNoteCourante * 60) - 10, positionY - 15); // Positionne le texte au-dessus de la note (descendu un peu)
             compteurCorrectes = 0;  // Réinitialiser le compteur si la réponse est fausse
             indexNoteCourante = 0;  // Recommencer depuis le début des notes
             setTimeout(function() {
