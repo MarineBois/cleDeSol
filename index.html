@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apprentissage des notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/smufl/1.18.1/bravura.css">
+    <link rel="manifest" href="/manifest.json">
+</head>
+<body>
+    <br>
+    <h1>Apprendre à lire les notes de musique</h1>
+    <br>
+
+    <!-- Canvas pour afficher la partition -->
+    <canvas id="partition" width="600" height="200"></canvas>
+
+    <!-- Section pour afficher le résultat -->
+    <p id="resultat">...</p>
+
+    <!-- Compteur de réponses correctes -->
+    <p>Réponses correctes consécutives : <span id="compteur">0</span></p>
+    
+    <!-- Score maximum atteint -->
+    <p>Score maximum atteint : <span id="scoreMax">0</span></p>
+
+    <!-- Boutons pour choisir la réponse -->
+    <div id="boutons-reponses">
+        <button class="note-btn" data-note="do">Do</button>
+        <button class="note-btn" data-note="ré">Ré</button>
+        <button class="note-btn" data-note="mi">Mi</button>
+        <button class="note-btn" data-note="fa">Fa</button>
+        <button class="note-btn" data-note="sol">Sol</button>
+        <button class="note-btn" data-note="la">La</button>
+        <button class="note-btn" data-note="si">Si</button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 20px;
+}
+
+canvas {
+    border: 1px solid black;
+    margin-bottom: 20px;
+}
+
+#resultat {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+}
+
+#boutons-reponses {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.note-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.note-btn:hover {
+    background-color: #0056b3;
+}

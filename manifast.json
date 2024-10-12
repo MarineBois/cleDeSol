@@ -1,0 +1,21 @@
+{
+  "name": "Apprendre la clé de sol",
+  "short_name": "MonApp",
+  "description": "Une application simple pour apprendre les notes de la clé de sol.",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0000ff",
+  "icons": [
+    {
+      "src": "/icons/icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/icons/icon.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
