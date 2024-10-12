@@ -41,7 +41,7 @@ $(document).ready(function () {
         for (let i = 0; i < 5; i++) {
             ctx.beginPath();
             ctx.moveTo(10, startY + i * lineHeight);  // Lignes qui commencent à 50px
-            ctx.lineTo(380, startY + i * lineHeight); // Elles s'étendent jusqu'à 550px
+            ctx.lineTo(330, startY + i * lineHeight); // Elles s'étendent jusqu'à 550px
             ctx.stroke();
         }
     }
@@ -76,7 +76,7 @@ $(document).ready(function () {
         // Nombre de notes à dessiner
         const nombreNotes = 5;
         const espaceEntreNotes = 60;  // Espace entre chaque note
-        let positionX = 80;  // Position initiale en X (pour la première note)
+        let positionX = 50;  // Position initiale en X (pour la première note)
 
         // Réinitialise les notes à deviner
         notesADeviner = [];
@@ -121,7 +121,7 @@ $(document).ready(function () {
             const positionY = 200;
             ctx.font = '14px Arial';
             ctx.fillStyle = '#000'; // Utilise la couleur noire
-            ctx.fillText(noteCliquee, 100 + (indexNoteCourante * 80) - 10, positionY - 15); // Positionne le texte au-dessus de la note (descendu un peu)
+            ctx.fillText(noteCliquee, 80 + (indexNoteCourante * 60) - 10, positionY - 15); // Positionne le texte au-dessus de la note (descendu un peu)
             indexNoteCourante++;  // Passer à la note suivante
 
             // Vérifie si toutes les notes ont été devinées
