@@ -41,7 +41,7 @@ $(document).ready(function () {
         for (let i = 0; i < 5; i++) {
             ctx.beginPath();
             ctx.moveTo(50, startY + i * lineHeight);  // Lignes qui commencent à 50px
-            ctx.lineTo(550, startY + i * lineHeight); // Elles s'étendent jusqu'à 550px
+            ctx.lineTo(450, startY + i * lineHeight); // Elles s'étendent jusqu'à 550px
             ctx.stroke();
         }
     }
@@ -75,7 +75,7 @@ $(document).ready(function () {
 
         // Nombre de notes à dessiner
         const nombreNotes = 5;
-        const espaceEntreNotes = 80;  // Espace entre chaque note
+        const espaceEntreNotes = 75;  // Espace entre chaque note
         let positionX = 100;  // Position initiale en X (pour la première note)
 
         // Réinitialise les notes à deviner
