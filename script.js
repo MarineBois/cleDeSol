@@ -101,7 +101,7 @@ $(document).ready(function () {
             positionX += espaceEntreNotes;  // Avancer la position pour la prochaine note
         }
 
-        //console.log("Notes à deviner :", notesADeviner);
+        console.log("Notes à deviner :", notesADeviner);
     }
 
     // Génére initialement plusieurs notes
@@ -173,8 +173,12 @@ $(document).ready(function () {
     $('#toggle').click(function () {
         if (cleActuelle === 'sol') {
             cleActuelle = 'fa';
+            $('.note-btn').css({'background-color': '#6f42c1'});
+            $('.toggleContainer').addClass('purple');
         } else {
             cleActuelle = 'sol';
+            $('.note-btn').css({'background-color': '#17a2b8'});
+            $('.toggleContainer').removeClass('purple');
         }
         dessinerPlusieursNotes();  // Redessiner les notes avec la nouvelle clé
     });
