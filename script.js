@@ -27,13 +27,13 @@ $(document).ready(function () {
     };
 
     const positionsNotesFa = {
-        'si': [60, 130],  // Juste en dessous de la première ligne additionnelle
-        'la': [70, 140],  // Sur la première ligne
-        'sol': [80, 150],  // Premier interligne
-        'fa': [90],  // Sur la deuxième ligne
-        'mi': [100], // Deuxième interligne
-        'ré': [110, 40],  // Sur la troisième ligne
-        'do': [120, 50],  // Troisième interligne (entre la troisième et la quatrième)
+        'sol': [60, 130],  // Juste en dessous de la première ligne additionnelle
+        'fa': [70, 140],  // Sur la première ligne
+        'mi': [80],  // Premier interligne
+        'ré': [90],  // Sur la deuxième ligne
+        'do': [100, 30], // Deuxième interligne
+        'si': [110, 40],  // Sur la troisième ligne
+        'la': [120, 50],  // Troisième interligne (entre la troisième et la quatrième)
     };
 
     // Variable pour stocker les notes générées aléatoirement
