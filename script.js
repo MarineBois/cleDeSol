@@ -13,8 +13,10 @@ $(document).ready(function () {
     // Les notes disponibles (en notation française pour la clé de sol sans le numéro d'octave)
     const notesFrancaises = ['mi', 'ré', 'do', 'si', 'la', 'sol', 'fa'];
 
+    let cleActuelle = 'sol'; // Clé par défaut: Sol
+
     // Positions possibles pour chaque note sur la partition
-    const positionsNotes = {
+    const positionsNotesSol = {
         'mi': [60, 130],  // Juste en dessous de la première ligne additionnelle
         'ré': [70, 140],  // Sur la première ligne
         'do': [80, 150],  // Premier interligne
@@ -22,6 +24,16 @@ $(document).ready(function () {
         'la': [100], // Deuxième interligne
         'sol': [110, 40],  // Sur la troisième ligne
         'fa': [120, 50],  // Troisième interligne (entre la troisième et la quatrième)
+    };
+
+    const positionsNotesFa = {
+        'si': [60, 130],  // Juste en dessous de la première ligne additionnelle
+        'la': [70, 140],  // Sur la première ligne
+        'sol': [80, 150],  // Premier interligne
+        'fa': [90],  // Sur la deuxième ligne
+        'mi': [100], // Deuxième interligne
+        'ré': [110, 40],  // Sur la troisième ligne
+        'do': [120, 50],  // Troisième interligne (entre la troisième et la quatrième)
     };
 
     // Variable pour stocker les notes générées aléatoirement
@@ -48,7 +60,7 @@ $(document).ready(function () {
 
     // Dessine une note spécifique sur la partition
     function dessinerNote(ctx, note, positionX, couleur = '#000') {
-        const positionsPossibles = positionsNotes[note];
+        const positionsPossibles = cleActuelle === 'sol' ? positionsNotesSol[note] : positionsNotesFa[note];
         const randomIndexPosition = Math.floor(Math.random() * positionsPossibles.length);
         const randomPosition = positionsPossibles[randomIndexPosition];
 
@@ -104,7 +116,7 @@ $(document).ready(function () {
     function mettreAJourScoreMax() {
         if (compteurCorrectes > scoreMax) {
             scoreMax = compteurCorrectes;
-            $('#scoreMax').text('Score max : ' + scoreMax);
+            $('#scoreMax').text(scoreMax);
         }
     }
 
@@ -127,12 +139,11 @@ $(document).ready(function () {
             // Vérifie si toutes les notes ont été devinées
             if (indexNoteCourante === notesADeviner.length) {
                 $('#resultat').text('Bravo, toutes les notes sont correctes !');
-                //compteurCorrectes = 0;
                 indexNoteCourante = 0;
                 setTimeout(function() {
                     dessinerPlusieursNotes();
                     mettreAJourScoreMax();
-                }, 2000);  // Générer une nouvelle série de notes
+                }, 1000);  // Générer une nouvelle série de notes
             }
 
         } else {
@@ -151,11 +162,22 @@ $(document).ready(function () {
         }
 
         // Mettre à jour l'affichage du compteur
-        $('#compteur').text('Réponses correctes : ' + compteurCorrectes);
+        //$('#compteur').text('Réponses correctes : ' + compteurCorrectes);
 
         // Met à jour le score maximum
         mettreAJourScoreMax();
     }
+
+
+    // Gère le toggle entre la clé de sol et la clé de fa
+    $('#toggle').click(function () {
+        if (cleActuelle === 'sol') {
+            cleActuelle = 'fa';
+        } else {
+            cleActuelle = 'sol';
+        }
+        dessinerPlusieursNotes();  // Redessiner les notes avec la nouvelle clé
+    });
 
     // Gestion des clics sur les boutons de notes
     $('.note-btn').click(function () {
