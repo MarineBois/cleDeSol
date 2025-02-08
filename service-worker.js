@@ -1,10 +1,10 @@
-const CACHE_NAME = 'my-site-cache-v1';
+const CACHE_NAME = 'cleDeSol';
 const urlsToCache = [
   '/',
   '/index.html',
   '/styles.css',
   '/app.js',
-  '/images/logo.png'
+  '/icons/icon.png'
 ];
 
 self.addEventListener('install', (event) => {
@@ -22,9 +22,9 @@ self.addEventListener('fetch', (event) => {
     caches.match(event.request)
       .then((response) => {
         if (response) {
-          return response;  // Si la ressource est en cache, la renvoyer
+          return response;
         }
-        return fetch(event.request);  // Sinon, faire une requête réseau normale
+        return fetch(event.request);
       })
   );
 });
